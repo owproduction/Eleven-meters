@@ -38,8 +38,11 @@ int main(void)
     SetTargetFPS(60);
 
     Image image = LoadImage("рамзан кадыров.png");
+    Image image2 = LoadImage("Шеврон_спецназа_«Ахмат».png");
     ImageResize(&image, 132, 114);
+
     Texture2D texture = LoadTextureFromImage(image);
+    Texture2D texture2 = LoadTextureFromImage(image2);
 
     Rectangle rec = { screenWidth / 2 - 50, screenHeight / 2 - 50,100,100 };
     Rectangle rec2 = { screenWidth / 4 - 50, screenHeight / 4 - 50,100,100 };
@@ -55,8 +58,10 @@ int main(void)
         DrawRectangleRec(rec, BLUE);
         DrawRectangleRec(rec2, RED);
         DrawText("Bob", rec.x, rec.y, 20, BLACK);
-        DrawTexture(texture, rec.x, rec.y, WHITE);
         DrawText("John", rec2.x, rec2.y, 20, BLACK);
+        DrawTexture(texture, rec.x, rec.y, WHITE);
+        DrawTexture(texture2, rec2.x, rec2.y, WHITE);
+        
         EndDrawing();
 
     }
